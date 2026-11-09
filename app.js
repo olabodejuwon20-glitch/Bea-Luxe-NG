@@ -1,6 +1,6 @@
 /**
- * Bea Luxe NG - Clean Interactive Engine
- * Matched with Base44 layout structure
+ * Bea Luxe NG - Interactive Engine with Animations
+ * Scroll reveals, header scroll shadow, animated mobile drawer, product grid
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,24 +12,120 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("catalogue-search");
   const filterButtons = document.querySelectorAll(".filter-btn");
   const mobileToggle = document.getElementById("mobile-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileDrawer = document.getElementById("mobile-drawer");
   const viewAllBtn = document.getElementById("view-all-prod-btn");
+  const siteHeader = document.querySelector(".site-header");
 
-  // Mobile menu toggle
-  if (mobileToggle && mobileMenu) {
+  // ======================================================================
+  // 1. SCROLL-REVEAL ANIMATIONS (IntersectionObserver)
+  // ======================================================================
+  const revealElements = document.querySelectorAll(".reveal-fade-up");
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    // Fallback: instantly show all elements
+    revealElements.forEach((el) => el.classList.add("active"));
+  }
+
+  // ======================================================================
+  // 2. HEADER SCROLL SHADOW
+  // ======================================================================
+  let lastScrollY = 0;
+  let ticking = false;
+
+  const onScroll = () => {
+    lastScrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (siteHeader) {
+          if (lastScrollY > 10) {
+            siteHeader.classList.add("scrolled");
+          } else {
+            siteHeader.classList.remove("scrolled");
+          }
+        }
+
+        // Active nav link based on scroll position
+        updateActiveNav();
+
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // ======================================================================
+  // 3. ACTIVE NAV LINK ON SCROLL
+  // ======================================================================
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("section[id]");
+
+  const updateActiveNav = () => {
+    const scrollPos = window.scrollY + 120;
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
+
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${sectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  };
+
+  // ======================================================================
+  // 4. ANIMATED MOBILE DRAWER
+  // ======================================================================
+  if (mobileToggle && mobileDrawer) {
     mobileToggle.addEventListener("click", () => {
-      const isVisible = mobileMenu.style.display === "block";
-      mobileMenu.style.display = isVisible ? "none" : "block";
+      const isOpen = mobileDrawer.classList.contains("open");
+      if (isOpen) {
+        mobileDrawer.classList.remove("open");
+        mobileToggle.classList.remove("open");
+        document.body.style.overflow = "";
+      } else {
+        mobileDrawer.classList.add("open");
+        mobileToggle.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
     });
 
-    mobileMenu.querySelectorAll("a").forEach(link => {
+    // Close drawer when a nav link is clicked
+    mobileDrawer.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        mobileMenu.style.display = "none";
+        mobileDrawer.classList.remove("open");
+        mobileToggle.classList.remove("open");
+        document.body.style.overflow = "";
       });
     });
   }
 
-  // Format currency
+  // ======================================================================
+  // 5. FORMAT CURRENCY
+  // ======================================================================
   const formatPrice = (price) => {
     if (price === null || price === undefined) {
       return `<div class="product-price on-request">Price on request</div>`;
@@ -37,7 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return `<div class="product-price">₦${price.toLocaleString()}</div>`;
   };
 
-  // Render Product Grid
+  // ======================================================================
+  // 6. RENDER PRODUCT GRID (with stagger animation)
+  // ======================================================================
   const renderProducts = () => {
     if (!productsContainer) return;
 
@@ -70,15 +168,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     productsContainer.innerHTML = filtered
-      .map((item) => {
+      .map((item, index) => {
         const waMsg = encodeURIComponent(
           `Hello Bea Luxe, I would like to ask about ${item.name}.`
         );
         const waUrl = `https://wa.me/${PRIMARY_PHONE}?text=${waMsg}`;
         const isAvailable = item.available !== false;
+        const delayClass = `delay-${(index % 4) + 1}`;
 
         return `
-        <article class="product-card">
+        <article class="product-card reveal-fade-up ${delayClass}">
           <div class="product-image-box">
             ${item.featured ? `<span class="badge-featured">Featured</span>` : ""}
             <img 
@@ -114,10 +213,32 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       })
       .join("");
+
+    // Re-observe dynamically rendered product cards for scroll-reveal
+    const newRevealEls = productsContainer.querySelectorAll(".reveal-fade-up");
+    if ("IntersectionObserver" in window) {
+      const productObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              productObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -20px 0px" }
+      );
+      newRevealEls.forEach((el) => productObserver.observe(el));
+    } else {
+      newRevealEls.forEach((el) => el.classList.add("active"));
+    }
   };
 
+  // ======================================================================
+  // 7. FILTER BUTTONS
+  // ======================================================================
   const updateActiveFilterBtn = () => {
-    filterButtons.forEach(btn => {
+    filterButtons.forEach((btn) => {
       if (btn.getAttribute("data-filter") === activeCategory) {
         btn.classList.add("active");
       } else {
@@ -126,8 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Filter Buttons
-  filterButtons.forEach(btn => {
+  filterButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       activeCategory = btn.getAttribute("data-filter");
       updateActiveFilterBtn();
@@ -135,8 +255,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Top 8 category tiles click handlers
-  document.querySelectorAll(".cat-tile").forEach(tile => {
+  // ======================================================================
+  // 8. CATEGORY TILE CLICK HANDLERS
+  // ======================================================================
+  document.querySelectorAll(".cat-tile").forEach((tile) => {
     tile.addEventListener("click", () => {
       const cat = tile.getAttribute("data-cat");
       if (cat) {
@@ -148,7 +270,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // View all link
+  // ======================================================================
+  // 9. VIEW ALL LINK
+  // ======================================================================
   if (viewAllBtn) {
     viewAllBtn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -161,7 +285,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Search input
+  // ======================================================================
+  // 10. SEARCH INPUT
+  // ======================================================================
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       activeSearch = e.target.value;
@@ -169,6 +295,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Initial render
+  // ======================================================================
+  // 11. SMOOTH SCROLL FOR ALL ANCHOR LINKS
+  // ======================================================================
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (targetId && targetId !== "#") {
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  });
+
+  // ======================================================================
+  // INITIAL RENDER
+  // ======================================================================
   renderProducts();
 });
