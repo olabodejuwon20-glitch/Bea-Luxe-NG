@@ -417,111 +417,12 @@
     </div>
   </footer>
 
-  <!-- Floating Direct Chat Action Button -->
-  <button class="floating-wa-exact" id="open-chat-btn" aria-label="Open Bea Luxe Direct Chat">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/2348162040699" target="_blank" rel="noopener" class="floating-wa-exact" aria-label="Order on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
     </svg>
-    <span class="chat-badge-dot"></span>
-  </button>
-
-  <!-- In-Site Direct Chat Modal / Drawer -->
-  <div class="chat-overlay" id="chat-overlay">
-    <div class="chat-modal" id="chat-modal" role="dialog" aria-modal="true" aria-labelledby="chat-modal-title">
-      <!-- Modal Header -->
-      <div class="chat-header">
-        <div class="chat-header-info">
-          <div class="chat-avatar">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="chat-title" id="chat-modal-title">Bea Luxe NG</div>
-            <div class="chat-subtitle">
-              <span class="chat-status-dot"></span>
-              Direct Store Line • Delivers to WhatsApp
-            </div>
-          </div>
-        </div>
-        <button class="chat-close-btn" id="close-chat-btn" aria-label="Close chat">✕</button>
-      </div>
-
-      <!-- Modal Body -->
-      <div class="chat-body">
-        <!-- Form View -->
-        <div id="chat-form-view">
-          <div class="chat-bubble-intro">
-            Hello! Ask about any piece, size, pricing, or custom delivery. Type your message below and we'll receive it immediately on WhatsApp.
-          </div>
-
-          <!-- Quick Action Chips -->
-          <div class="chat-quick-chips">
-            <button type="button" class="quick-chip" data-text="Hello Bea Luxe, is this piece currently available in stock?">Is it in stock?</button>
-            <button type="button" class="quick-chip" data-text="Hello, I would like to enquire about sizing and pricing for this piece.">Sizing & Price</button>
-            <button type="button" class="quick-chip" data-text="Hello, what is your delivery timeframe and fee within Lagos?">Delivery options</button>
-          </div>
-
-          <!-- Selected Product Pill (Dynamic) -->
-          <div class="chat-product-pill" id="chat-product-pill" style="display: none;">
-            <div class="chat-pill-text">
-              <span class="pill-label">Regarding:</span>
-              <strong id="chat-product-name">Product Name</strong>
-            </div>
-            <button type="button" class="chat-pill-remove" id="remove-product-pill" title="Remove product context">✕</button>
-          </div>
-
-          <form id="direct-chat-form" class="chat-form">
-            <div class="form-group">
-              <label for="chat-name">Your Name</label>
-              <input type="text" id="chat-name" name="name" class="chat-input" placeholder="e.g. Amaka Adeyemi" required autocomplete="name">
-            </div>
-
-            <div class="form-group">
-              <label for="chat-phone">WhatsApp / Phone Number</label>
-              <input type="tel" id="chat-phone" name="phone" class="chat-input" placeholder="e.g. 0816 204 0699" required autocomplete="tel">
-            </div>
-
-            <div class="form-group">
-              <label for="chat-message">Your Message</label>
-              <textarea id="chat-message" name="message" class="chat-textarea" rows="3" placeholder="Type your inquiry here..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-chat-submit" id="chat-submit-btn">
-              <span>Send to Bea Luxe</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-          </form>
-
-          <div class="chat-fallback-row">
-            <span>Prefer WhatsApp app?</span>
-            <a href="https://wa.me/2348162040699" target="_blank" rel="noopener" id="chat-direct-wa-link">
-              Open WhatsApp directly →
-            </a>
-          </div>
-        </div>
-
-        <!-- Success View -->
-        <div id="chat-success-view" class="chat-success-card" style="display: none;">
-          <div class="success-icon-wrap">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1f7b4d" stroke-width="2.5">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <h3 class="success-title">Message Delivered!</h3>
-          <p class="success-desc">
-            Thank you! Your message has been sent directly to the store manager's WhatsApp. We will reply to your phone number shortly.
-          </p>
-          <button type="button" class="btn-dark" id="chat-another-btn" style="width: 100%; justify-content: center; margin-top: 1.25rem;">
-            Send another message
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+  </a>
 
   <!-- Scripts -->
   <script src="products.js"></script>
