@@ -3,13 +3,55 @@
  */
 
 const PRODUCTS = [
-  // 1. Featured Top Row (Matches Base44 exact showcase)
+  // 1. New Arrivals & Featured Showcase
+  {
+    id: "ny-cocoa-coord-set",
+    name: "NY Earth Tone Zip Co-ord Set",
+    category: "Unisex Wears",
+    description: "Rich cocoa brown streetwear set featuring a quarter-zip collared polo and relaxed drawstring trousers with embroidered NY motif.",
+    price: 38000,
+    available: true,
+    featured: true,
+    image: "images/ny-cocoa-coord-set.jpg"
+  },
+  {
+    id: "keyhole-contrast-dress",
+    name: "Keyhole Piping Bodycon Mini Dress",
+    category: "Unisex Wears",
+    description: "Sculpted mandarin collar mini dress with teardrop keyhole neckline, cap sleeves, and crisp contrast ivory piping.",
+    price: 28500,
+    available: true,
+    featured: true,
+    image: "images/keyhole-bodycon-dress.jpg"
+  },
+  {
+    id: "liverpool-noir-jersey",
+    name: "Liverpool F.C. Noir & Neon Jersey",
+    category: "Unisex Wears",
+    description: "Black pinstripe luxury edition kit with electric yellow collar accents, embroidered Liverbird crest, zip polo collar, and Champions League sleeve badge.",
+    price: 32000,
+    available: true,
+    featured: true,
+    image: "images/liverpool-noir-jersey.jpg"
+  },
+  {
+    id: "ck-classic-boxers-set",
+    name: "Calvin Klein 3-Piece Classic Trunk Set",
+    category: "Unisex Wears",
+    description: "Premium breathable stretch cotton trunks in signature heather grey, black, and crimson with jacquard logo waistband in gift box.",
+    price: 18500,
+    available: true,
+    featured: true,
+    image: "images/calvin-klein-boxers-set.jpg"
+  },
+
+  // 2. Signature Core Collection
   {
     id: "everyday-coord",
     name: "The Everyday Co-ord",
     category: "Unisex Wears",
     description: "A relaxed, polished set for easy mornings and late plans.",
-    price: null, // "Price on request" exact
+    price: null, // "Price on request"
     available: true,
     featured: true,
     image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=80"
@@ -45,7 +87,7 @@ const PRODUCTS = [
     image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80"
   },
 
-  // 2. Additional Catalogue Items
+  // 3. Additional Curated Catalogue Items
   {
     id: "brushed-gold-cuff",
     name: "Brushed Gold Minimalist Bangle",
