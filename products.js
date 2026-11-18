@@ -1,11 +1,11 @@
 /**
  * Bea Luxe NG - Complete Curated Product Database
- * Total 51 Curated Lifestyle Pieces Across 7 Categories
+ * Total 83 Curated Lifestyle Pieces Across 7 Categories
  */
 
 const PRODUCTS = [
   // =========================================================================
-  // 1. UNISEX WEARS (11 Pieces)
+  // 1. UNISEX WEARS (16 Pieces)
   // =========================================================================
   {
     id: "ny-cocoa-coord-set",
@@ -117,9 +117,58 @@ const PRODUCTS = [
     featured: false,
     image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80"
   },
-
+  {
+    id: "adire-silk-lounge-set",
+    name: "Two-Piece Adire Silk Loungewear Set",
+    category: "Unisex Wears",
+    description: "Hand-dyed contemporary Nigerian indigo silk twill short-sleeve shirt and matching fluid trousers with contrast piping and drawstrings.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "rich-uncle-pleated-coord",
+    name: "Rich Uncle Pleated Kaftan & Trousers Coord",
+    category: "Unisex Wears",
+    description: "Flowing textured pleated fabric coord in desert stone beige with minimal mandarin collar and tapered easy-fit drawstring bottoms.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "heavyweight-graphic-streetwear-tee",
+    name: "Heavyweight Nigerian Graphic Streetwear Tee (280 GSM)",
+    category: "Unisex Wears",
+    description: "Custom boxy oversized streetwear tee milled from combed Nigerian cotton with high-density puff print detailing and drop shoulders.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "linen-safari-resort-set",
+    name: "Linen Safari Short-Sleeve Resort Two-Piece",
+    category: "Unisex Wears",
+    description: "Breathable crisp unbleached pure linen camp shirt with four functional front safari pockets and tailored relaxed linen shorts.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "monogram-silk-lounge-set",
+    name: "Monogram Mulberry Silk Pyjama & Day-Lounge Set",
+    category: "Unisex Wears",
+    description: "Effortless daytime-to-evening lounge pyjama set in champagne gold jacquard silk with notch lapels and mother-of-pearl buttons.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=700&q=80"
+  },
   // =========================================================================
-  // 2. FOOTWEAR (7 Pieces)
+  // 2. FOOTWEAR (11 Pieces)
   // =========================================================================
   {
     id: "terra-leather-slides",
@@ -191,9 +240,48 @@ const PRODUCTS = [
     featured: false,
     image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80"
   },
-
+  {
+    id: "velvet-albert-gold-crest-loafers",
+    name: "Velvet Albert Loafers with Gold Bullion Crest",
+    category: "Footwear",
+    description: "Midnight navy plush cotton velvet formal slip-on shoes with hand-embroidered gold wire crest, quilted satin lining, and hard leather sole.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "double-buckle-leather-slides",
+    name: "Double-Buckle Contoured Leather Footbed Slides",
+    category: "Footwear",
+    description: "The signature Nigerian everyday luxury footwear — oiled full-grain leather straps with matte gold buckles on an orthopedic cork arch footbed.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "crocodile-embossed-leather-mules",
+    name: "Handcrafted Crocodile-Embossed Leather Mules",
+    category: "Footwear",
+    description: "Polished mahogany croc-embossed calfskin half-shoes designed for kaftans and agbada attire, featuring open-back ease and stacked leather heel.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "suede-driving-shoes-pebble",
+    name: "Perforated Suede Driving Shoes with Pebble Grips",
+    category: "Footwear",
+    description: "Italian split calf suede moccasins with contrast hand-stitching, penny strap, and tubular rubber pebble studded outsole for casual mobility.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=700&q=80"
+  },
   // =========================================================================
-  // 3. BAGS (7 Pieces)
+  // 3. BAGS (11 Pieces)
   // =========================================================================
   {
     id: "amber-structured-tote",
@@ -265,9 +353,48 @@ const PRODUCTS = [
     featured: false,
     image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
   },
-
+  {
+    id: "woven-leather-padded-cassette",
+    name: "Woven Leather Padded Cassette Crossbody",
+    category: "Bags",
+    description: "Maxi orthogonal weave crossbody bag in butter-soft nappa leather with magnetic foldover flap and adjustable triangle buckle strap.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "executive-leather-briefcase-messenger",
+    name: "Executive Full-Grain Leather Briefcase & Messenger",
+    category: "Bags",
+    description: "Double-compartment vegetable-tanned bovine leather laptop briefcase with quick-access luggage sleeve and detachable padded shoulder sling.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "bamboo-handle-structured-handbag",
+    name: "Structured Leather Handbag with Bamboo Handle",
+    category: "Bags",
+    description: "Iconic structured event handbag in smooth box calfskin with handcrafted fire-bent bamboo top handle and gold-tone turnlock closure.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "quilted-cylinder-vanity-case",
+    name: "Quilted Leather Cylinder Vanity Case Bag",
+    category: "Bags",
+    description: "Diamond-quilted caviar calfskin cylindrical beauty vanity bag with top handle, leather-interlaced gold chain strap, and interior mirror.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=80"
+  },
   // =========================================================================
-  // 4. PERFUMES (6 Pieces)
+  // 4. PERFUMES (12 Pieces)
   // =========================================================================
   {
     id: "oud-neroli-edp",
@@ -329,9 +456,68 @@ const PRODUCTS = [
     featured: false,
     image: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=800&q=80"
   },
-
+  {
+    id: "lattafa-24k-pure-gold",
+    name: "24 Carat Pure Gold Eau de Parfum (24K)",
+    category: "Perfumes",
+    description: "The iconic Nigerian viral sensation — an opulent Oriental amber fragrance opening with golden saffron, cinnamon, and smoky oud, settling into rich leather and Bourbon vanilla.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "khamrah-royal-vanilla",
+    name: "Khamrah Royal Amber & Vanilla Extrait",
+    category: "Perfumes",
+    description: "Luxuriously sweet and spicy Arabic gourmand featuring decadent notes of nutmeg, dates, praline, and warm benzoin in a crystal decanter flacon.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "club-de-nuit-intense-noir",
+    name: "Club de Nuit Intense Noir Special Edition",
+    category: "Perfumes",
+    description: "Nigeria's most coveted signature masculine cologne with vibrant lemon zest, blackcurrant, smoky birch wood, and patchouli with extraordinary projection.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1583445013765-46c20c4a6772?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "barakkat-rouge-540-extrait",
+    name: "Barakkat Rouge 540 Extrait de Parfum",
+    category: "Perfumes",
+    description: "The undeniable viral staple with luminous grandiflorum jasmine, saffron, bitter almond, and warm mineral ambergris in a rich crimson flacon.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "hareem-al-sultan-gold-oil",
+    name: "Hareem Al Sultan Gold Concentrated Perfume Oil",
+    category: "Perfumes",
+    description: "The viral TikTok gold filigree oil blend of red apple, dark chocolate, Turkish rose, and lingering sandalwood with 24-hour skin adherence.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "badee-al-oud-glory",
+    name: "Bade'e Al Oud (Oud for Glory) Luxury Decanter",
+    category: "Perfumes",
+    description: "A regal black-and-gold presentation with notes of lavender, nutmeg, saffron, aged patchouli, and deep natural Agarwood.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=80"
+  },
   // =========================================================================
-  // 5. FASHION ACCESSORIES (7 Pieces)
+  // 5. FASHION ACCESSORIES (11 Pieces)
   // =========================================================================
   {
     id: "brushed-gold-cuff",
@@ -403,9 +589,48 @@ const PRODUCTS = [
     featured: false,
     image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=800&q=80"
   },
-
+  {
+    id: "cuban-link-chain-bracelet-set",
+    name: "18K Gold-Plated Heavy Cuban Link Chain & Bracelet Set",
+    category: "Fashion Accessories",
+    description: "12mm diamond-cut Miami Cuban link necklace and matching bracelet plated in 5 microns of 18K yellow gold with triple-security box clasp.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "coral-bead-gold-accent-bracelet",
+    name: "Artisanal Red Coral Bead & 18K Gold Accent Bracelet",
+    category: "Fashion Accessories",
+    description: "Natural polished Mediterranean red coral beads strung with solid 18K gold-plated spacer rings and a discreet Bea Luxe logo disc.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "oversized-flat-top-shield-sunglasses",
+    name: "Oversized Flat-Top Gradient Shield Sunglasses",
+    category: "Fashion Accessories",
+    description: "Dramatic one-piece frameless gradient lens with polished gold metal brow bar, UV400 protection, and anti-reflective inner coating.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "tonneau-skeleton-silicon-watch",
+    name: "Automatic Tonneau Skeleton Watch with Silicon Strap",
+    category: "Fashion Accessories",
+    description: "Curved ergonomic tonneau stainless steel casing with transparent open-worked dial, luminous hands, and sweat-resistant ribbed fluororubber strap.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=80"
+  },
   // =========================================================================
-  // 6. KITCHEN ITEMS (7 Pieces)
+  // 6. KITCHEN ITEMS (11 Pieces)
   // =========================================================================
   {
     id: "japanese-chef-knife-block",
@@ -477,9 +702,48 @@ const PRODUCTS = [
     featured: false,
     image: "https://images.unsplash.com/photo-1594998893017-36147cbcae05?auto=format&fit=crop&w=800&q=80"
   },
-
+  {
+    id: "electric-yam-pounder-mincer",
+    name: "Multi-Speed Electric Yam Pounder & Meat Mincer (3L)",
+    category: "Kitchen Items",
+    description: "Heavy-duty 1000W stainless steel twin-blade food processor and automatic yam pounder engineered for smooth, lump-free Nigerian swallow in under 2 minutes.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "ceramic-granite-cookware-12pc",
+    name: "12-Piece Ceramic Non-Stick Granite Cookware Set",
+    category: "Kitchen Items",
+    description: "Cream ivory mineral granite non-stick pot and pan ensemble with heat-resistant wood-effect handles, tempered glass lids, and induction bottoms.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "dual-zone-digital-air-fryer",
+    name: "Dual-Zone Digital Touch Air Fryer (8.5L)",
+    category: "Kitchen Items",
+    description: "Large-capacity dual-basket air fryer with rose gold control dials, viewing windows, sync-cook technology, and 8 pre-programmed smart modes.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "electric-gravity-spice-grinder",
+    name: "Rechargeable Electric Gravity Pepper & Spice Grinder",
+    category: "Kitchen Items",
+    description: "Matte black stainless steel mill with ceramic burr, USB-C fast charging, adjustable coarseness, and blue LED illumination when tilted.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=700&q=80"
+  },
   // =========================================================================
-  // 7. HOUSEHOLD ITEMS (8 Pieces)
+  // 7. HOUSEHOLD ITEMS (11 Pieces)
   // =========================================================================
   {
     id: "sculptural-aroma-diffuser",
@@ -560,5 +824,35 @@ const PRODUCTS = [
     available: true,
     featured: false,
     image: "https://images.unsplash.com/photo-1546554137-f86b9593a222?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "flame-mist-ambient-diffuser",
+    name: "Ultrasonic Flame Mist Ambient Aroma Diffuser",
+    category: "Household Items",
+    description: "The viral fireplace humidifier combining realistic warm amber LED flame illumination with cool ultrasonic essential oil mist atomization.",
+    price: null,
+    available: true,
+    featured: true,
+    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "crystal-rose-touch-lamp",
+    name: "Rechargeable Crystal Rose Touch Bedside Table Lamp",
+    category: "Household Items",
+    description: "Faceted acrylic crystal cylinder casting a 3D blooming rose light projection with 16 RGB color modes and touch dimmer remote control.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: "wabi-sabi-donut-ceramic-vase",
+    name: "Nordic Wabi-Sabi Hollow Donut Ceramic Vase",
+    category: "Household Items",
+    description: "The iconic circular sculptural matte cream vase with granular unglazed terracotta finish, ideal for pampas grass and modern interior styling.",
+    price: null,
+    available: true,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=700&q=80"
   }
 ];

@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div style="grid-column: 1 / -1; text-align: center; padding: 4.5rem 1.5rem; background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-sm);">
           <p style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--forest-dark); margin-bottom: 0.5rem;">No pieces found</p>
           <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 420px; margin: 0 auto 1.5rem;">We couldn't find any pieces matching your current filters. Try resetting or searching for another keyword.</p>
-          <button class="btn-dark" id="collections-reset-btn">View All 53 Pieces</button>
+          <button class="btn-dark" id="collections-reset-btn">View All ${PRODUCTS.length} Pieces</button>
         </div>
       `;
       document.getElementById("collections-reset-btn")?.addEventListener("click", () => {
