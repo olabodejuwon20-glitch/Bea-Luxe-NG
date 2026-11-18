@@ -9,7 +9,7 @@ const PRODUCTS = [
     name: "NY Earth Tone Zip Co-ord Set",
     category: "Unisex Wears",
     description: "Rich cocoa brown streetwear set featuring a quarter-zip collared polo and relaxed drawstring trousers with embroidered NY motif.",
-    price: 38000,
+    price: null,
     available: true,
     featured: true,
     image: "images/ny-cocoa-coord-set.jpg"
@@ -19,7 +19,7 @@ const PRODUCTS = [
     name: "Keyhole Piping Bodycon Mini Dress",
     category: "Unisex Wears",
     description: "Sculpted mandarin collar mini dress with teardrop keyhole neckline, cap sleeves, and crisp contrast ivory piping.",
-    price: 28500,
+    price: null,
     available: true,
     featured: true,
     image: "images/keyhole-bodycon-dress.jpg"
@@ -29,7 +29,7 @@ const PRODUCTS = [
     name: "Liverpool F.C. Noir & Neon Jersey",
     category: "Unisex Wears",
     description: "Black pinstripe luxury edition kit with electric yellow collar accents, embroidered Liverbird crest, zip polo collar, and Champions League sleeve badge.",
-    price: 32000,
+    price: null,
     available: true,
     featured: true,
     image: "images/liverpool-noir-jersey.jpg"
@@ -39,7 +39,7 @@ const PRODUCTS = [
     name: "Calvin Klein 3-Piece Classic Trunk Set",
     category: "Unisex Wears",
     description: "Premium breathable stretch cotton trunks in signature heather grey, black, and crimson with jacquard logo waistband in gift box.",
-    price: 18500,
+    price: null,
     available: true,
     featured: true,
     image: "images/calvin-klein-boxers-set.jpg"
@@ -51,7 +51,7 @@ const PRODUCTS = [
     name: "The Everyday Co-ord",
     category: "Unisex Wears",
     description: "A relaxed, polished set for easy mornings and late plans.",
-    price: null, // "Price on request"
+    price: null,
     available: true,
     featured: true,
     image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=80"
@@ -61,7 +61,7 @@ const PRODUCTS = [
     name: "Terra Leather Slides",
     category: "Footwear",
     description: "Hand-finished leather slides that soften beautifully with wear.",
-    price: 34000,
+    price: null,
     available: true,
     featured: true,
     image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=700&q=80"
@@ -71,7 +71,7 @@ const PRODUCTS = [
     name: "The Amber Structured Tote",
     category: "Bags",
     description: "A clean-lined tote with room for a laptop, a wallet and the rest of it.",
-    price: 56000,
+    price: null,
     available: true,
     featured: true,
     image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=80"
@@ -81,7 +81,7 @@ const PRODUCTS = [
     name: "Oud & Neroli Eau de Parfum",
     category: "Perfumes",
     description: "Warm oud softened with neroli and a quiet trail of amber.",
-    price: 38500,
+    price: null,
     available: true,
     featured: true,
     image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80"
@@ -93,7 +93,7 @@ const PRODUCTS = [
     name: "Brushed Gold Minimalist Bangle",
     category: "Fashion Accessories",
     description: "Architectural 18K gold PVD waterproof wrist cuff that never tarnishes.",
-    price: 18500,
+    price: null,
     available: true,
     featured: false,
     image: "https://images.unsplash.com/photo-1611591475837-9755b0a70f07?auto=format&fit=crop&w=700&q=80"
@@ -103,7 +103,7 @@ const PRODUCTS = [
     name: "Square Frame Polarized Sunglasses",
     category: "Fashion Accessories",
     description: "Handmade cellulose acetate sunglasses with UV400 polarized bronze lenses.",
-    price: 24000,
+    price: null,
     available: true,
     featured: false,
     image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80"
@@ -113,7 +113,7 @@ const PRODUCTS = [
     name: "Japanese Precision Cutlery Set",
     category: "Kitchen Items",
     description: "High-carbon stainless steel 5-piece chef knives in natural acacia block.",
-    price: 58000,
+    price: null,
     available: true,
     featured: false,
     image: "https://images.unsplash.com/photo-1593618998160-e34014e67546?auto=format&fit=crop&w=700&q=80"
@@ -123,7 +123,7 @@ const PRODUCTS = [
     name: "Fluted Amber Borosilicate Tumblers",
     category: "Kitchen Items",
     description: "Set of 4 heat-resistant ribbed glassware for morning matcha and evening drinks.",
-    price: 22000,
+    price: null,
     available: true,
     featured: false,
     image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80"
@@ -133,7 +133,7 @@ const PRODUCTS = [
     name: "Matte Ceramic Ultrasonic Diffuser",
     category: "Household Items",
     description: "Unglazed terracotta ceramic diffuser with warm ambient glow.",
-    price: 32500,
+    price: null,
     available: true,
     featured: false,
     image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80"
@@ -143,7 +143,7 @@ const PRODUCTS = [
     name: "Turkish Honeycomb Waffle Throw",
     category: "Household Items",
     description: "100% pre-washed breathable cotton throw in neutral sand beige.",
-    price: 27000,
+    price: null,
     available: true,
     featured: false,
     image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=700&q=80"
@@ -153,7 +153,7 @@ const PRODUCTS = [
     name: "Smoked Vanilla & Vetiver Candle",
     category: "Household Items",
     description: "Hand-poured coconut-soy wax blend with double crackling wooden wick.",
-    price: 19500,
+    price: null,
     available: true,
     featured: false,
     image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=700&q=80"
@@ -163,7 +163,7 @@ const PRODUCTS = [
     name: "Pleated Wide-Leg Linen Pants",
     category: "Unisex Wears",
     description: "High-waisted tailored linen pants designed for airy, breezy movement.",
-    price: 34000,
+    price: null,
     available: false,
     featured: false,
     image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80"

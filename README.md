@@ -6,7 +6,7 @@
 ---
 
 ## ✦ Overview
-Bea Luxe NG is a mobile-first, editorial lifestyle eCommerce showcase for a luxury retail brand based in Lagos, Nigeria. The design is inspired by high-end boutique stores with clean typography, warm natural palettes (deep forest green, cream, soft beige, muted gold), smooth scroll animations, and pre-filled WhatsApp concierge ordering.
+Bea Luxe NG is a mobile-first, editorial lifestyle eCommerce showcase for a luxury retail brand in Nigeria. The design is inspired by high-end boutique stores with clean typography, warm natural palettes (deep forest green, cream, soft beige, muted gold), smooth scroll animations, and pre-filled WhatsApp concierge ordering.
 
 ## ✦ Features
 - **Editorial Aesthetic:** Built with the exact boutique layout of Base44 / luxury retail design.
