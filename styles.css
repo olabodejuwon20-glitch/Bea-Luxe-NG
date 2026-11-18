@@ -1502,7 +1502,8 @@ button, input, textarea {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
   align-items: center;
 }
 
