@@ -93,7 +93,7 @@ const BeaLuxeCart = (() => {
 
     saveCart();
     if (!silent) {
-      showToast(`Added "${product.name}" to selection`);
+      showToast(`Added to your selection`);
       openDrawer();
     }
   };
@@ -148,6 +148,7 @@ const BeaLuxeCart = (() => {
       renderDrawerItems();
       drawer.classList.add("open");
       overlay.classList.add("open");
+      document.body.classList.add("drawer-open");
       document.body.style.overflow = "hidden";
     }
   };
@@ -158,6 +159,7 @@ const BeaLuxeCart = (() => {
     if (drawer && overlay) {
       drawer.classList.remove("open");
       overlay.classList.remove("open");
+      document.body.classList.remove("drawer-open");
       document.body.style.overflow = "";
     }
   };
@@ -295,16 +297,18 @@ const BeaLuxeCart = (() => {
         <div class="rec-items-grid">
           ${recommendations.map((item) => `
             <div class="rec-item-card">
-              <img 
-                src="${item.image}" 
-                alt="${item.name}" 
-                class="rec-item-img"
-                onerror="this.src='https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=300&q=80'"
-              >
-              <div class="rec-item-details">
-                <span class="rec-item-cat">${item.category}</span>
-                <h4 class="rec-item-name">${item.name}</h4>
-                <div class="rec-item-price">Price on request</div>
+              <div class="rec-item-top">
+                <img 
+                  src="${item.image}" 
+                  alt="${item.name}" 
+                  class="rec-item-img"
+                  onerror="this.src='https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=300&q=80'"
+                >
+                <div class="rec-item-details">
+                  <span class="rec-item-cat">${item.category}</span>
+                  <h4 class="rec-item-name">${item.name}</h4>
+                  <div class="rec-item-price">Price on request</div>
+                </div>
               </div>
               <button 
                 class="btn-add-rec" 
@@ -332,12 +336,14 @@ const BeaLuxeCart = (() => {
     `;
 
     modalOverlay.classList.add("open");
+    document.body.classList.add("modal-open");
   };
 
   const closeRecommendationModal = () => {
     const modalOverlay = document.getElementById("bea-luxe-rec-overlay");
     if (modalOverlay) {
       modalOverlay.classList.remove("open");
+      document.body.classList.remove("modal-open");
     }
   };
 
