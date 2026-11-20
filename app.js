@@ -333,7 +333,93 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ======================================================================
+  // 12. HERO BANNER SLIDESHOW
+  // ======================================================================
+  const initHeroSlider = () => {
+    const slides = document.querySelectorAll(".hero-slide");
+    const dots = document.querySelectorAll(".slider-dot");
+    const prevBtn = document.getElementById("hero-prev-btn");
+    const nextBtn = document.getElementById("hero-next-btn");
+    const sliderContainer = document.getElementById("hero-slider");
+
+    if (!slides.length) return;
+
+    let currentSlide = 0;
+    let slideInterval = null;
+
+    const showSlide = (index) => {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentSlide = index;
+
+      slides.forEach((slide, i) => {
+        if (i === currentSlide) {
+          slide.classList.add("active");
+        } else {
+          slide.classList.remove("active");
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        if (i === currentSlide) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    };
+
+    const nextSlide = () => showSlide(currentSlide + 1);
+    const prevSlide = () => showSlide(currentSlide - 1);
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        nextSlide();
+        resetAutoplay();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        prevSlide();
+        resetAutoplay();
+      });
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", (e) => {
+        e.preventDefault();
+        showSlide(i);
+        resetAutoplay();
+      });
+    });
+
+    const startAutoplay = () => {
+      slideInterval = setInterval(nextSlide, 5000);
+    };
+
+    const stopAutoplay = () => {
+      if (slideInterval) clearInterval(slideInterval);
+    };
+
+    const resetAutoplay = () => {
+      stopAutoplay();
+      startAutoplay();
+    };
+
+    if (sliderContainer) {
+      sliderContainer.addEventListener("mouseenter", stopAutoplay);
+      sliderContainer.addEventListener("mouseleave", startAutoplay);
+    }
+
+    startAutoplay();
+  };
+
+  // ======================================================================
   // INITIAL RENDER
   // ======================================================================
+  initHeroSlider();
   renderProducts();
 });

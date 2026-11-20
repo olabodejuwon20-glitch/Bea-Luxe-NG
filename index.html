@@ -125,14 +125,60 @@
             </div>
           </div>
 
-          <!-- Right Column: Ribbed Green Panel + Cutout Lifestyle Still -->
+          <!-- Right Column: Interactive Hero Banner Slideshow (Slide 1: New Season Dress) -->
           <div class="reveal-fade-up delay-2">
-            <div class="hero-visual-frame">
-              <div class="hero-inner-photo">
-                <img 
-                  src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80" 
-                  alt="Curated Lifestyle Pieces: Folded linen shirt, ceramic vase, perfume & bag"
-                >
+            <div class="hero-visual-frame" id="hero-slider">
+              <!-- Slide 1 (Active Default): Sky Blue Skater Dress -->
+              <div class="hero-slide active" data-slide="0">
+                <div class="hero-inner-photo">
+                  <img 
+                    src="images/hero-slide-1.jpg" 
+                    alt="Bea Luxe NG Sky Blue Ribbed Skater Dress"
+                  >
+                  <div class="hero-slide-badge">
+                    <span class="badge-dot"></span>
+                    <span>Slide 1 • New Season Luxe (₦18,500)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2: Ruched Drape Maxi Evening Gown -->
+              <div class="hero-slide" data-slide="1">
+                <div class="hero-inner-photo">
+                  <img 
+                    src="images/ruched-drape-maxi-gown.jpg" 
+                    alt="Bea Luxe NG Ruched Drape Maxi Gown in 4 Colors"
+                  >
+                  <div class="hero-slide-badge">
+                    <span class="badge-dot"></span>
+                    <span>Slide 2 • Occasion Gowns (₦15,000)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3: Handpicked Lifestyle Essentials Still -->
+              <div class="hero-slide" data-slide="2">
+                <div class="hero-inner-photo">
+                  <img 
+                    src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80" 
+                    alt="Curated Lifestyle Pieces: Folded linen shirt, ceramic vase, perfume & bag"
+                  >
+                  <div class="hero-slide-badge">
+                    <span class="badge-dot"></span>
+                    <span>Slide 3 • Curated Lifestyle Finds</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slider Navigation Controls -->
+              <div class="hero-slider-nav">
+                <button class="hero-nav-arrow" id="hero-prev-btn" aria-label="Previous Slide">‹</button>
+                <div class="hero-slider-dots" id="hero-dots">
+                  <button class="slider-dot active" data-dot="0" aria-label="Go to slide 1"></button>
+                  <button class="slider-dot" data-dot="1" aria-label="Go to slide 2"></button>
+                  <button class="slider-dot" data-dot="2" aria-label="Go to slide 3"></button>
+                </div>
+                <button class="hero-nav-arrow" id="hero-next-btn" aria-label="Next Slide">›</button>
               </div>
             </div>
           </div>
