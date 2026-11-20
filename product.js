@@ -513,23 +513,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="product-info">
             <div class="product-meta-row">
-              <span>${item.category}</span>
-              <span>Available</span>
+              <span class="product-cat-pill">${item.category}</span>
+              <span class="product-status-verified">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Available
+              </span>
             </div>
 
-            <h3 class="product-title">
+            <h3 class="product-title" title="${item.name}">
               <a href="${detailUrl}" class="product-title-link">${item.name}</a>
             </h3>
             
-            <div class="product-price on-request">Price on request</div>
+            <div class="product-price">${item.price ? `₦${item.price.toLocaleString()}` : 'Price on request'}</div>
 
             <div class="product-card-actions">
               <a href="${detailUrl}" class="btn-card-details">
-                <span>View Details</span>
+                <span>Details</span>
                 <span style="font-size: 0.9em;">→</span>
               </a>
               <button class="btn-card-add-cart" onclick="BeaLuxeCart.addToCart('${item.id}', 1)" title="Add to Selection">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                   <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
                   <line x1="3" y1="6" x2="21" y2="6"></line>
                   <path d="M16 10a4 4 0 0 1-8 0"></path>
