@@ -223,8 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3 class="product-title" title="${item.name}">
               <a href="${detailUrl}" class="product-title-link">${item.name}</a>
             </h3>
-            
-            ${formatPrice(item.price)}
 
             <div class="product-card-actions">
               <a href="${detailUrl}" class="btn-card-details">

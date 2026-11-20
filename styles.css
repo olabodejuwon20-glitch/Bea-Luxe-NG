@@ -1032,18 +1032,12 @@ button, input, textarea {
   color: var(--forest-dark);
 }
 
-.product-price {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 0.75rem;
-}
-
-.product-price.on-request {
-  font-size: 0.86rem;
-  font-weight: 500;
-  color: #6b7280;
-  font-style: italic;
+.product-price,
+.product-price.on-request,
+.price-card-value,
+.cart-item-price-tag,
+.rec-item-price {
+  display: none !important;
 }
 
 .product-card-actions {

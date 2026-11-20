@@ -205,7 +205,6 @@ const BeaLuxeCart = (() => {
             <h4 class="cart-item-title">
               <a href="product.html?id=${encodeURIComponent(item.id)}" onclick="BeaLuxeCart.closeDrawer()">${item.name}</a>
             </h4>
-            <div class="cart-item-price-tag">₦${item.price ? item.price.toLocaleString() : "15,000"}</div>
 
             <div class="cart-item-actions-row">
               <div class="cart-stepper">
@@ -307,7 +306,6 @@ const BeaLuxeCart = (() => {
                 <div class="rec-item-details">
                   <span class="rec-item-cat">${item.category}</span>
                   <h4 class="rec-item-name">${item.name}</h4>
-                  <div class="rec-item-price">₦${item.price ? item.price.toLocaleString() : "15,000"}</div>
                 </div>
               </div>
               <button 
