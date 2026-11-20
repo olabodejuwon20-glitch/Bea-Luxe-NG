@@ -56,7 +56,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-cream);
+  background-color: #ffffff; /* Updated to pure white per user request */
   color: var(--text-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -348,7 +348,7 @@ button, input, textarea {
    ========================================================================== */
 .hero-section {
   padding: 5rem 0 5.5rem;
-  background-color: var(--bg-cream);
+  background-color: #ffffff; /* Updated to pure white per user request */
   position: relative;
 }
 
@@ -498,7 +498,7 @@ button, input, textarea {
    ========================================================================== */
 .categories-section {
   padding: 5rem 0 6rem;
-  background-color: var(--bg-cream);
+  background-color: #ffffff; /* Updated to pure white per user request */
   border-top: 1px solid var(--border-light);
 }
 
@@ -630,7 +630,7 @@ button, input, textarea {
    ========================================================================== */
 .featured-section {
   padding: 5rem 0 6rem;
-  background-color: var(--bg-cream);
+  background-color: #ffffff; /* Updated to pure white per user request */
   border-top: 1px solid var(--border-light);
 }
 
@@ -865,7 +865,7 @@ button, input, textarea {
    ========================================================================== */
 .story-section {
   padding: 6rem 0;
-  background-color: var(--bg-cream);
+  background-color: #ffffff; /* Updated to pure white per user request */
   border-top: 1px solid var(--border-light);
 }
 
@@ -921,7 +921,7 @@ button, input, textarea {
    ========================================================================== */
 .pillars-section {
   padding: 5rem 0 6rem;
-  background-color: var(--bg-cream);
+  background-color: #ffffff; /* Updated to pure white per user request */
   border-top: 1px solid var(--border-light);
 }
 
@@ -977,7 +977,7 @@ button, input, textarea {
    ========================================================================== */
 .cta-banner-section {
   padding: 2rem 0 5rem;
-  background-color: var(--bg-cream);
+  background-color: #ffffff; /* Updated to pure white per user request */
 }
 
 .cta-banner-card {
@@ -2938,3 +2938,54 @@ body.modal-open .floating-wa-exact {
 }
 
 
+
+/* ---------------------------------------------------
+   Global background overrides – set everything to pure white
+   --------------------------------------------------- */
+body,
+.site-header,
+.hero-banner,
+.collection-banner,
+.featured-section,
+.story-section,
+.pillars-section,
+.cta-banner-section,
+.site-footer {
+  background-color: var(--bg-primary) !important; /* white */
+}
+
+:root {
+  --bg-primary: #ffffff;          /* pure white */
+  --bg-secondary: #f8f9fa;        /* light gray */
+  --text-primary: #212529;        /* dark gray */
+  --text-muted: #6c757d;          /* medium gray */
+  --accent: #d32f2f;              /* brand red kept for accents */
+  --link: #0069d9;                /* neutral blue for links */
+}
+
+/* Update generic element colours */
+body { background-color: var(--bg-primary); color: var(--text-primary); }
+a { color: var(--link); }
+
+/* Featured Products Section */
+.featured-products { padding: 4rem 0; background: var(--bg-secondary); }
+.featured-products .container { max-width: var(--max-width); }
+.featured-products .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.featured-products .product-card { background: #fff; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1rem; text-align: center; }
+.featured-products .product-card img { max-width: 100%; height: auto; margin-bottom: 0.5rem; }
+.featured-products .product-card h3 { font-size: 1.1rem; margin: 0.5rem 0; color: var(--text-primary); }
+.featured-products .product-card .price { font-weight: bold; color: var(--accent); }
+
+/* Footer */
+.site-footer { background: var(--bg-secondary); color: var(--text-muted); padding: 2rem 0; }
+.site-footer .footer-inner { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+.site-footer .footer-col { flex: 1 1 200px; }
+.site-footer h4 { margin-bottom: 0.5rem; color: var(--text-primary); }
+.site-footer a { color: var(--link); }
+.site-footer .newsletter input { padding: 0.5rem; border: 1px solid var(--border-light); border-radius: var(--radius-sm); }
+.site-footer .newsletter button { background: var(--accent); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: var(--radius-sm); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .site-footer .footer-inner { flex-direction: column; }
+}
