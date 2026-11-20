@@ -4,10 +4,10 @@
 
 :root {
   /* Palette exact */
-  --bg-cream: #fbf9f4;
+  --bg-cream: #ffffff;
   --bg-ivory: #ffffff;
-  --bg-card-soft: #fcfbf8;
-  --bg-footer: #f5f0e6;
+  --bg-card-soft: #ffffff;
+  --bg-footer: #ffffff;
   --forest-dark: #163024;
   --forest-hero: #234534;
   --forest-hover: #0e2017;
@@ -124,7 +124,7 @@ button, input, textarea {
    Header Navbar
    ========================================================================== */
 .site-header {
-  background-color: rgba(251, 249, 244, 0.94);
+  background-color: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
@@ -136,7 +136,7 @@ button, input, textarea {
 
 .site-header.scrolled {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  background-color: rgba(251, 249, 244, 0.98);
+  background-color: rgba(255, 255, 255, 0.98);
 }
 
 .header-inner {
@@ -2937,55 +2937,3 @@ body.modal-open .floating-wa-exact {
   transform: translateY(-2px);
 }
 
-
-
-/* ---------------------------------------------------
-   Global background overrides – set everything to pure white
-   --------------------------------------------------- */
-body,
-.site-header,
-.hero-banner,
-.collection-banner,
-.featured-section,
-.story-section,
-.pillars-section,
-.cta-banner-section,
-.site-footer {
-  background-color: var(--bg-primary) !important; /* white */
-}
-
-:root {
-  --bg-primary: #ffffff;          /* pure white */
-  --bg-secondary: #f8f9fa;        /* light gray */
-  --text-primary: #212529;        /* dark gray */
-  --text-muted: #6c757d;          /* medium gray */
-  --accent: #d32f2f;              /* brand red kept for accents */
-  --link: #0069d9;                /* neutral blue for links */
-}
-
-/* Update generic element colours */
-body { background-color: var(--bg-primary); color: var(--text-primary); }
-a { color: var(--link); }
-
-/* Featured Products Section */
-.featured-products { padding: 4rem 0; background: var(--bg-secondary); }
-.featured-products .container { max-width: var(--max-width); }
-.featured-products .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-.featured-products .product-card { background: #fff; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1rem; text-align: center; }
-.featured-products .product-card img { max-width: 100%; height: auto; margin-bottom: 0.5rem; }
-.featured-products .product-card h3 { font-size: 1.1rem; margin: 0.5rem 0; color: var(--text-primary); }
-.featured-products .product-card .price { font-weight: bold; color: var(--accent); }
-
-/* Footer */
-.site-footer { background: var(--bg-secondary); color: var(--text-muted); padding: 2rem 0; }
-.site-footer .footer-inner { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
-.site-footer .footer-col { flex: 1 1 200px; }
-.site-footer h4 { margin-bottom: 0.5rem; color: var(--text-primary); }
-.site-footer a { color: var(--link); }
-.site-footer .newsletter input { padding: 0.5rem; border: 1px solid var(--border-light); border-radius: var(--radius-sm); }
-.site-footer .newsletter button { background: var(--accent); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: var(--radius-sm); }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .site-footer .footer-inner { flex-direction: column; }
-}
