@@ -973,6 +973,101 @@ button, input, textarea {
 }
 
 /* ==========================================================================
+   Section: Customer Reviews
+   ========================================================================== */
+.reviews-section {
+  padding: 5rem 0 6rem;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-light);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s var(--ease-out-expo);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  border-color: var(--border-light);
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  color: var(--gold-accent);
+  margin-bottom: 1rem;
+}
+
+.review-stars svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.review-text {
+  font-size: 0.92rem;
+  color: var(--text-main);
+  line-height: 1.65;
+  margin-bottom: 1.4rem;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.review-author-wrap {
+  border-top: 1px solid var(--border-light);
+  padding-top: 1rem;
+}
+
+.review-author-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--wa-green);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.review-author-loc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.review-item-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--gold-accent);
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+/* ==========================================================================
    Section 6: Dark Forest CTA Banner ("Not sure where to start?")
    ========================================================================== */
 .cta-banner-section {
@@ -1221,6 +1316,7 @@ body.modal-open .floating-wa-exact {
   .products-4-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .reviews-grid,
   .pillars-4-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1397,6 +1493,7 @@ body.modal-open .floating-wa-exact {
     box-sizing: border-box;
   }
 
+  .reviews-grid,
   .pillars-4-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.25rem;
