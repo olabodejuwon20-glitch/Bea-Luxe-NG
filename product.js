@@ -7,7 +7,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const PRIMARY_PHONE = "2348162040699";
   const detailContainer = document.getElementById("product-detail-container");
-  const relatedContainer = document.getElementById("related-products-grid");
   const toastEl = document.getElementById("toast-notification");
 
   const mobileToggle = document.getElementById("mobile-toggle");
@@ -474,73 +473,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Render Related Products (Same category, excluding current)
-  if (relatedContainer) {
-    let related = PRODUCTS.filter(
-      (item) => item.category === product.category && item.id !== product.id
-    ).slice(0, 4);
-
-    if (related.length < 4) {
-      const additional = PRODUCTS.filter(
-        (item) => item.id !== product.id && !related.some((r) => r.id === item.id)
-      ).slice(0, 4 - related.length);
-      related = [...related, ...additional];
-    }
-
-    relatedContainer.innerHTML = related
-      .map((item, index) => {
-        const detailUrl = `product.html?id=${encodeURIComponent(item.id)}`;
-        const waCardMsg = encodeURIComponent(
-          `Hello Bea Luxe, I would like to ask about "${item.name}" (Ref: ${item.id}).`
-        );
-        const waCardUrl = `https://wa.me/${PRIMARY_PHONE}?text=${waCardMsg}`;
-        const delayClass = `delay-${(index % 4) + 1}`;
-
-        return `
-        <article class="product-card reveal-fade-up ${delayClass}">
-          <div class="product-image-box">
-            ${item.featured ? `<span class="badge-featured">Featured</span>` : ""}
-            <a href="${detailUrl}" class="product-image-link" aria-label="View ${item.name}">
-              <img 
-                src="${item.image}" 
-                alt="${item.name}" 
-                loading="lazy"
-                onerror="this.src='https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=80'"
-              >
-            </a>
-          </div>
-
-          <div class="product-info">
-            <div class="product-meta-row">
-              <span class="product-cat-pill">${item.category}</span>
-              <span class="product-status-verified">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Available
-              </span>
-            </div>
-
-            <h3 class="product-title" title="${item.name}">
-              <a href="${detailUrl}" class="product-title-link">${item.name}</a>
-            </h3>
-
-            <div class="product-card-actions">
-              <a href="${detailUrl}" class="btn-card-details">
-                <span>Details</span>
-                <span style="font-size: 0.9em;">→</span>
-              </a>
-              <button class="btn-card-add-cart" onclick="BeaLuxeCart.addToCart('${item.id}', 1)" title="Add to Selection">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
-                <span>+ Cart</span>
-              </button>
-            </div>
-          </div>
-        </article>
-      `;
-      })
-      .join("");
+  // Scroll Reveal Observer for Product Page
+  const revealElements = document.querySelectorAll(".reveal-fade-up");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
+    );
+    revealElements.forEach((el) => observer.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add("is-revealed"));
   }
 });
