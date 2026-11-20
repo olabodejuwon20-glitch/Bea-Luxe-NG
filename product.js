@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Price Card -->
         <div class="price-display-card">
           <span class="price-card-label">Acquisition & Pricing</span>
-          <div class="price-card-value">Price on request</div>
+          <div class="price-card-value">₦${product.price ? product.price.toLocaleString() : "15,000"}</div>
           <p class="price-card-subtext">
             Every piece is curated with strict attention to quality. Connect directly with our concierge on WhatsApp for current availability, custom sizing, and instant payment links.
           </p>
@@ -524,7 +524,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <a href="${detailUrl}" class="product-title-link">${item.name}</a>
             </h3>
             
-            <div class="product-price">${item.price ? `₦${item.price.toLocaleString()}` : 'Price on request'}</div>
+            <div class="product-price">₦${item.price ? item.price.toLocaleString() : "15,000"}</div>
 
             <div class="product-card-actions">
               <a href="${detailUrl}" class="btn-card-details">

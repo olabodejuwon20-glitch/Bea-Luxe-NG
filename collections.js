@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ======================================================================
   const formatPrice = (price) => {
     if (price === null || price === undefined) {
-      return `<div class="product-price on-request">Price on request</div>`;
+      return `<div class="product-price">₦15,000</div>`;
     }
     return `<div class="product-price">₦${price.toLocaleString()}</div>`;
   };
